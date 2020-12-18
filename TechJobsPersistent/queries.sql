@@ -6,5 +6,9 @@ WHERE TABLE_NAME = 'jobs';
 
 --Part 2
 
+SELECT Name 
+FROM techjobs.employers
+Where Location="St. Louis City";
+
 --Part 3
 
