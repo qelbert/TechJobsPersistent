@@ -53,7 +53,7 @@ namespace TechJobsPersistent.Controllers
                 };
 
 
-                for (int i=0; i < selectedSkills.Length; i++)
+                for (int i = 0; i < selectedSkills.Length; i++)
                 {
                     //Skill theSkill = context.Skills.Find(addJobViewModel.SkillId);
 
@@ -63,7 +63,7 @@ namespace TechJobsPersistent.Controllers
                         Job = newJob,
                         //SkillId = int.Parse(selectedSkills[i])
                         //SkillId = theSkill.Id,
-                        SkillId = int.Parse(selectedSkills[i])
+                        SkillId = Int32.Parse(selectedSkills[i])
                         //Skill = theSkill
                     };
 
@@ -76,7 +76,13 @@ namespace TechJobsPersistent.Controllers
                 return Redirect("Index");
             }
 
-            return View("AddJob", addJobViewModel);
+            else
+            {
+                List<Skill> skills = context.Skills.ToList();
+                List<Employer> employers = context.Employers.ToList();
+                addJobViewModel = new AddJobViewModel(employers, skills);
+                return View("AddJob", addJobViewModel);
+            }
         }
 
         public IActionResult Detail(int id)

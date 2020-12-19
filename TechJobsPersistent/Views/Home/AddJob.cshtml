@@ -4,8 +4,8 @@
 
 <form asp-controller="Home" asp-action="ProcessAddJobForm" method="post">
     <div class="form-group">
-        <label>Name</label>
-        <input class="form-control" />
+        <label asp-for="Name">Job Name</label>
+        <input asp-for="Name" />
         <span asp-validation-for="Name"></span>
     </div>
 
@@ -28,6 +28,6 @@
         <a asp-controller="Skill" asp-action="Add">Add New Skill</a>
     </div>
 
-        <input type="submit" value="Add Job" />
-    </form>
+    <input type="submit" value="Add Job" />
+</form>
 
