@@ -55,12 +55,16 @@ namespace TechJobsPersistent.Controllers
 
                 for (int i=0; i < selectedSkills.Length; i++)
                 {
+                    //Skill theSkill = context.Skills.Find(addJobViewModel.SkillId);
 
                     JobSkill newJobSkill = new JobSkill
                     {
                         JobId = newJob.Id,
                         Job = newJob,
+                        //SkillId = int.Parse(selectedSkills[i])
+                        //SkillId = theSkill.Id,
                         SkillId = int.Parse(selectedSkills[i])
+                        //Skill = theSkill
                     };
 
                     context.JobSkills.Add(newJobSkill);
