@@ -18,7 +18,41 @@ namespace TechJobsPersistent.ViewModels
         public List<SelectListItem> Skills { get; set; }
 
 
-        public AddJobViewModel(List<Employer> employers)
+        //public AddJobViewModel(List<Employer> employers)
+        //{
+        //    Employers = new List<SelectListItem>();
+
+        //    foreach (var employer in employers)
+        //    {
+        //        Employers.Add
+        //        (
+        //            new SelectListItem
+        //            {
+        //                Value = employer.Id.ToString(),
+        //                Text = employer.Name
+        //            }
+        //        ); ;
+        //    }
+        //}
+
+        //public AddJobViewModel(List<Skill> skills)
+        //{
+        //    Skills = new List<SelectListItem>();
+
+        //    foreach (var skill in skills)
+        //    {
+        //        Skills.Add
+        //        (
+        //            new SelectListItem
+        //            {
+        //                Value = skill.Id.ToString(),
+        //                Text = skill.Name
+        //            }
+        //        ); ;
+        //    }
+        //}
+
+        public AddJobViewModel(List<Employer> employers, List<Skill> skills)
         {
             Employers = new List<SelectListItem>();
 
@@ -33,10 +67,7 @@ namespace TechJobsPersistent.ViewModels
                     }
                 ); ;
             }
-        }
-
-        public AddJobViewModel(List<Skill> skills)
-        {
+      
             Skills = new List<SelectListItem>();
 
             foreach (var skill in skills)
@@ -51,7 +82,6 @@ namespace TechJobsPersistent.ViewModels
                 ); ;
             }
         }
-
 
         public AddJobViewModel()
         {
